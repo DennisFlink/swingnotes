@@ -1,0 +1,13 @@
+@use "../abstracts/mixin" as m;
+
+.all-notes-container {
+  background-color: green;
+  @include m.container;
+}
+
+.container {
+  @include m.container;
+  h3 {
+    @include m.center-text;
+  }
+}

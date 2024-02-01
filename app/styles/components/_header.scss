@@ -1,0 +1,16 @@
+@use "../abstracts/colors" as C;
+
+header {
+  width: 100%;
+  height: 8rem;
+  background: C.$primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

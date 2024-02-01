@@ -1,13 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <title>Swing Notes</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <nav>
+        <p class="welcome">Log in to get started</p>
+        <form class="login">
+          <input
+            type="text"
+            placeholder="user"
+            class="login__input login__input--user"
+          />
+          <button type="button" class="login__btn">&rarr;</button>
+        </form>
+      </nav>
+    </header>
+    <main>
+      <section class="tabs container">
+        <nav>
+          <a href="#html" class="link link1"> <i class="fab fa-html5"></i></a>
+          <a href="#css" class="link link2">
+            <i class="fab fa-css3"></i>
+          </a>
+          <a href="#js" class="link link3">
+            <i class="fab fa-js"></i>
+          </a>
+        </nav>
+      </section>
+
+      <section class="all-notes-container container">
+        <div class="container">
+          <h3>All Notes</h3>
+        </div>
+        <ul>
+          <li></li>
+        </ul>
+      </section>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
