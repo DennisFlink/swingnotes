@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-      defer
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-      defer
-    ></script>
-    <title>Swing Notes</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <p class="welcome">Log in to get started</p>
-        <form class="login">
-          <input
-            type="text"
-            placeholder="user"
-            class="login__input login__input--user"
-          />
-          <button type="button" class="login__btn">&rarr;</button>
-        </form>
-      </nav>
-    </header>
-    <main>
-      <section class="tabs container">
-        <nav>
-          <a href="#html" class="link link1"> <i class="fab fa-html5"></i></a>
-          <a href="#css" class="link link2">
-            <i class="fab fa-css3"></i>
-          </a>
-          <a href="#js" class="link link3">
-            <i class="fab fa-js"></i>
-          </a>
-        </nav>
-      </section>
+   <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./styles/main.css" />
 
-      <section class="all-notes-container container">
-        <div class="container">
-          <h3>All Notes</h3>
-        </div>
-        <ul>
-          <li></li>
-        </ul>
-      </section>
-    </main>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+      <!-- ICONS -->
+
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+      <title>Swing Notes</title>
+   </head>
+   <body>
+      <main>
+         <section class="tabs container">
+            <div class="tabs-wrapper">
+               <a class="tab-link" data-tabs="all notes">
+                  <ion-icon class="icons" name="file-tray-full-outline"></ion-icon>
+               </a>
+
+               <a class="tab-link" data-tabs="new note">
+                  <ion-icon class="icons" name="pencil-outline"></ion-icon>
+               </a>
+            </div>
+         </section>
+
+         <section class="all-notes-container container hidden">
+            <div class="container">
+               <h3>All Notes</h3>
+            </div>
+            <div class="list-container">
+               <ul class="notes-list">
+                  <li class="note-item">
+                     <div class="date-container">
+                        <p>MÅNDAG 3 NOV</p>
+                     </div>
+                     <div class="content-container">
+                        <textarea cols="33" rows="8" placeholder="Enter your note here..." readonly></textarea>
+                     </div>
+                     <div class="autor-container"><ion-icon class="icon" name="remove-outline"></ion-icon><span>Dennis</span></div>
+                     <div class="button-container">
+                        <button type="button" class="edit-button">EDIT</button>
+                        <button type="button" class="delete-button">DELETE</button>
+                     </div>
+                  </li>
+                  <li class="note-item">
+                     <div class="date-container">
+                        <p>MÅNDAG 3 NOV</p>
+                     </div>
+                     <div class="content-container">
+                        <textarea cols="33" rows="8" placeholder="Enter your note here..." readonly></textarea>
+                     </div>
+                     <div class="autor-container"><ion-icon class="icon" name="remove-outline"></ion-icon><span>Dennis</span></div>
+                     <div class="button-container">
+                        <button type="button" class="edit-button">EDIT</button>
+                        <button type="button" class="delete-button">DELETE</button>
+                     </div>
+                  </li>
+                  <li class="note-item">
+                     <div class="date-container">
+                        <p>MÅNDAG 3 NOV</p>
+                     </div>
+                     <div class="content-container">
+                        <textarea cols="33" rows="8" placeholder="Enter your note here..." readonly></textarea>
+                     </div>
+                     <div class="autor-container"><ion-icon class="icon" name="remove-outline"></ion-icon><span>Dennis</span></div>
+                     <div class="button-container">
+                        <button type="button" class="edit-button">EDIT</button>
+                        <button type="button" class="delete-button">DELETE</button>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="create-note container hidden">
+            <div class="create-note-container">
+               <textarea class="note-field" cols="30" rows="10" placeholder="Write your note here.."></textarea>
+               <div class="input-container">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" class="username-input" />
+               </div>
+               <button class="button">Publish</button>
+            </div>
+         </section>
+      </main>
+      <script type="module" src="/src/main.ts"></script>
+   </body>
 </html>
