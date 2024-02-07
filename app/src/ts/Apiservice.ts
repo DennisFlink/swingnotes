@@ -47,9 +47,8 @@ const deleteNote = async (id: string) => {
 
 const updateNoteApi = async (notedata: Note) => {
    const notetext = notedata.note
-   console.log(notetext)
    console.log(`UPDATING ${notedata.id}`)
-   console.log(notedata.note)
+
    try {
       const response = await axios.put(`${apiUrl}/api/notes/${notedata.id}`, {
          note: notetext,
