@@ -1,5 +1,6 @@
 @use '../abstracts/mixin' as m;
 .tabs {
+   position: relative;
    @include m.container;
    height: 10rem;
    width: 100%;

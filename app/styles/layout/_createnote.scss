@@ -1,6 +1,6 @@
 @use '../abstracts/mixin' as m;
 
-.create-note {
+.create-note-container {
    @include m.container;
    background-color: aqua;
    display: flex;
@@ -24,6 +24,9 @@
          height: 30rem;
          resize: none;
       }
+      .title-input {
+         width: 100%;
+      }
    }
 
    .input-container {
@@ -35,11 +38,12 @@
          font-size: 2rem;
       }
       input {
+         width: 100%;
          padding: 2rem;
          border: none;
       }
    }
-   button {
+   .publish-button {
       display: block;
       padding: 1rem;
       width: 100%;
