@@ -1,4 +1,8 @@
+@use '../abstracts/colors' as c;
+
 .modal[open] {
+   outline: 1rem solid c.$outlineClr;
+   border-radius: 1rem;
    top: 50%;
    left: 50%;
    width: 35rem;
@@ -24,6 +28,7 @@
    }
    input {
       padding: 1rem;
+      border: 1px solid #000 !important;
    }
 }
 

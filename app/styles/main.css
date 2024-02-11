@@ -102,6 +102,8 @@ body {
 }
 
 .modal[open] {
+  outline: 1rem solid #ced4da;
+  border-radius: 1rem;
   top: 50%;
   left: 50%;
   width: 35rem;
@@ -128,6 +130,7 @@ body {
 }
 .modal-form-content input {
   padding: 1rem;
+  border: 1px solid #000 !important;
 }
 
 .input-login {
@@ -139,12 +142,6 @@ body {
 .modal::backdrop {
   background: black;
   opacity: 0.3;
-}
-
-header {
-  position: absolute;
-  width: 100%;
-  background-color: aqua;
 }
 
 .all-notes-container {

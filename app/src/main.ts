@@ -67,15 +67,6 @@ Domelelement.modalLogin.addEventListener('submit', (event) => {
    event.preventDefault()
    const username = Domelelement.usernameLoginInput.value
    Domelelement.userNameInput.value = username
-   Domelelement.currentUser.textContent = username
    getNote(username)
    Domelelement.modal.close()
-})
-
-Domelelement.logoutBtn.addEventListener('click', (event) => {
-   event.preventDefault()
-   Domelelement.modal.showModal()
-   deleteLi()
-   Domelelement.createForm.reset()
-   Domelelement.modalLogin.reset()
 })
