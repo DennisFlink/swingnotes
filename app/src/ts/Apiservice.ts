@@ -62,4 +62,4 @@ const updateNoteApi = async (notedata: Note) => {
       console.error('FETCH ERROR', error)
    }
 }
-export { postNote, deleteNote, updateNoteApi }
+export { postNote, deleteNote, updateNoteApi, getNote }

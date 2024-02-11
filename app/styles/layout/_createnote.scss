@@ -1,24 +1,29 @@
 @use '../abstracts/mixin' as m;
+@use '../abstracts/colors' as c;
 
 .create-note-container {
    @include m.container;
-   background-color: aqua;
+
    display: flex;
    align-items: center;
    justify-content: center;
-   border-radius: 10rem;
 
-   .create-note-container {
-      margin-top: 5rem;
+   .create-note-form {
+      background-color: c.$note-list-background;
+      outline: 1rem solid c.$outlineClr;
+      border-radius: 1rem;
       padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      height: 50rem;
+      min-width: 35rem;
+      min-height: 60rem;
+      max-height: 60rem;
       .note-field {
+         width: 100%;
          display: inline-block;
-         padding: 2rem;
+         padding: 1rem;
          border: 1px solid black;
          outline: none;
          height: 30rem;
@@ -39,13 +44,13 @@
       }
       input {
          width: 100%;
-         padding: 2rem;
+         padding: 1rem;
          border: none;
       }
-   }
-   .publish-button {
-      display: block;
-      padding: 1rem;
-      width: 100%;
+
+      #username {
+         pointer-events: none;
+         background-color: #999;
+      }
    }
 }

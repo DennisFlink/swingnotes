@@ -1,22 +1,32 @@
 /* SECTIONS  */
-const allNotesSection = document.querySelector('.all-notes-container') as HTMLElement
-const createNewNoteSection = document.querySelector('.create-note-container') as HTMLElement
+export const allNotesSection = document.querySelector('.all-notes-container') as HTMLElement
+export const createNewNoteSection = document.querySelector('.create-note-container') as HTMLElement
 
-/* TABS */
+/* FORMS */
+export const createForm = document.querySelector('.create-note-form') as HTMLFormElement
+export const modalLogin = document.querySelector('.modal-form-content') as HTMLFormElement
 
 /* CONTAINERS  */
-const buttonContainer = document.querySelector('.button-container') as HTMLElement
-const tabsContainer = document.querySelector('.tabs-wrapper') as HTMLElement
-/* BUTTONS */
+export const buttonContainer = document.querySelector('.button-container') as HTMLElement
+export const tabsContainer = document.querySelector('.tabs-wrapper') as HTMLElement
 
-const publishBtn = document.querySelector('.publish-button') as HTMLElement
-const deleteBtn = document.querySelector('.delete-button') as HTMLButtonElement
+/* BUTTONS */
+export const publishBtn = document.querySelector('.publish-button') as HTMLButtonElement
+export const deleteBtn = document.querySelector('.delete-button') as HTMLButtonElement
+export const logoutBtn = document.querySelector('.logout-btn') as HTMLButtonElement
 
 /* UL LIST  */
-const noteList = document.querySelector('.notes-list') as HTMLElement
+export const noteList = document.querySelector('.notes-list') as HTMLElement
 
 /* INPUT */
-const titleInput = document.querySelector('.title-input') as HTMLInputElement
-const textareaInput = document.querySelector('.note-field') as HTMLTextAreaElement
-const userNameInput = document.querySelector('.username-input') as HTMLInputElement
-export { allNotesSection, createNewNoteSection, tabsContainer, publishBtn, noteList, userNameInput, textareaInput, titleInput, buttonContainer, deleteBtn }
+export const titleInput = document.querySelector('.title-input') as HTMLInputElement
+export const textareaInput = document.querySelector('.note-field') as HTMLTextAreaElement
+export const userNameInput = document.querySelector('.username-input') as HTMLInputElement
+export const usernameLoginInput = document.querySelector('.username-login-input') as HTMLInputElement
+
+/* DIALOG WINDOW */
+export const modal = document.querySelector('.modal') as HTMLDialogElement
+export const loginBtn = document.querySelector('.login-btn') as HTMLButtonElement
+
+/* SPAN */
+export const currentUser = document.querySelector('.current-user') as HTMLSpanElement

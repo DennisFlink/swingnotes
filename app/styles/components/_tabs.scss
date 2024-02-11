@@ -1,4 +1,5 @@
 @use '../abstracts/mixin' as m;
+@use '../abstracts/colors' as c;
 .tabs {
    position: relative;
    @include m.container;
@@ -23,7 +24,7 @@
 }
 
 .tab-link {
-   background-color: #e599f7;
+   background-color: c.$tab-color;
    display: flex;
    justify-content: center;
    width: 50%;
@@ -35,6 +36,6 @@
    }
    &:hover,
    &.active {
-      background-color: #9c36b5;
+      background-color: c.$tab-color-active;
    }
 }

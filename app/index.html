@@ -14,6 +14,21 @@
    </head>
    <body>
       <main>
+         <header class="header">
+            <p>CURRENT USER: <span class="current-user">Dennis</span></p>
+            <button type="button" class="logout-btn">LOGOUT</button>
+         </header>
+         <dialog class="modal">
+            <h2>Welcome to Swing Notes</h2>
+            <form class="modal-form-content">
+               <div class="input-login">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" class="username-login-input" required minlength="3" pattern="[A-Za-z]+" title="Minst 3 bokstäver(Inga Å,Ä,Ö) Tack" />
+               </div>
+               <button type="submit" class="button login-btn">Login</button>
+            </form>
+         </dialog>
+
          <section class="tabs container">
             <div class="tabs-wrapper">
                <a class="tab-link" data-tabs="all notes">
@@ -28,60 +43,22 @@
 
          <section class="all-notes-container container hidden">
             <div class="list-container">
-               <ul class="notes-list">
-                  <li class="note-item">
-                     <h2 class="note-title">TITEL</h2>
-                     <div class="date-container">
-                        <p>MÅNDAG 3 NOV</p>
-                     </div>
-                     <div class="content-container">
-                        <textarea cols="33" rows="8" placeholder="Enter your note here..." readonly></textarea>
-                     </div>
-                     <div class="autor-container"><ion-icon class="icon" name="remove-outline"></ion-icon><span>Dennis</span></div>
-                     <div class="button-container">
-                        <button type="button" class="button edit-button">EDIT</button>
-                        <button type="button" class="button delete-button">DELETE</button>
-                     </div>
-                  </li>
-                  <li class="note-item">
-                     <div class="date-container">
-                        <p>MÅNDAG 3 NOV</p>
-                     </div>
-                     <div class="content-container">
-                        <textarea cols="33" rows="8" placeholder="Enter your note here..." readonly></textarea>
-                     </div>
-                     <div class="autor-container"><ion-icon class="icon" name="remove-outline"></ion-icon><span>Dennis</span></div>
-                     <div class="button-container">
-                        <button type="button" class="button edit-button">EDIT</button>
-                        <button type="button" class="button delete-button">DELETE</button>
-                     </div>
-                  </li>
-                  <li class="note-item">
-                     <div class="date-container">
-                        <p>MÅNDAG 3 NOV</p>
-                     </div>
-                     <div class="content-container">
-                        <textarea cols="33" rows="8" placeholder="Enter your note here..." readonly></textarea>
-                     </div>
-                     <div class="autor-container"><ion-icon class="icon" name="remove-outline"></ion-icon><span>Dennis</span></div>
-                     <div class="button-container">
-                        <button type="button" class="button edit-button">EDIT</button>
-                        <button type="button" class="button delete-button">DELETE</button>
-                     </div>
-                  </li>
-               </ul>
+               <ul class="notes-list"></ul>
             </div>
          </section>
          <section class="create-note-container container hidden">
-            <div class="create-note-container">
-               <input class="title-input" type="text" placeholder="Title" />
-               <textarea class="note-field" cols="30" rows="10" placeholder="Write your note here.."></textarea>
+            <form id="create-note-form" class="create-note-form">
+               <div class="input-container">
+                  <label for="title">Title</label>
+                  <input class="title-input" id="title" type="text" name="title" placeholder="Title" minlength="5" maxlength="50" required />
+               </div>
+               <textarea class="note-field" id="note" name="note" cols="30" rows="10" placeholder="Write your note here.." minlength="5" maxlength="200" required></textarea>
                <div class="input-container">
                   <label for="username">Username</label>
-                  <input type="text" id="username" class="username-input" />
+                  <input type="text" id="username" name="username" class="username-input" readonly />
                </div>
-               <button class="publish-button">Publish</button>
-            </div>
+               <button type="submit" class="publish-button">Publish</button>
+            </form>
          </section>
       </main>
       <script type="module" src="/src/main.ts"></script>

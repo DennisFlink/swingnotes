@@ -1,7 +1,7 @@
 import * as Domelelement from './ts/Domelement'
-import { changeActiveTab, changeViews, deleteNotes, editTextarea, updateNote, goToView, deleteLi } from './ts/Dommanipulation'
+import { changeActiveTab, changeViews, deleteNotes, editTextarea, updateNote, deleteLi } from './ts/Dommanipulation'
 import { NoteData } from './ts/Noteinterface'
-import { postNote, deleteNote, updateNoteApi } from './ts/Apiservice'
+import { postNote, deleteNote, updateNoteApi, getNote } from './ts/Apiservice'
 
 Domelelement.tabsContainer.addEventListener('click', (event) => {
    const clickedTab = event.target as HTMLElement
@@ -22,12 +22,14 @@ const getvalue = () => {
    }
    return noteData
 }
-Domelelement.publishBtn.addEventListener('click', () => {
+Domelelement.createForm.addEventListener('submit', (event) => {
+   event.preventDefault()
    const data = getvalue()
    deleteLi()
    postNote(data)
-   const allNotes = Domelelement.allNotesSection
-   goToView(allNotes)
+   Domelelement.createForm.reset()
+   window.confirm('Note created successfully! Press OK to continue.')
+   Domelelement.userNameInput.value = data.username
 })
 
 Domelelement.noteList.addEventListener('click', (event) => {
@@ -55,4 +57,25 @@ Domelelement.noteList.addEventListener('click', (event) => {
          editTextarea(editBtn)
       }
    }
+})
+
+window.addEventListener('load', () => {
+   Domelelement.modal.showModal()
+})
+
+Domelelement.modalLogin.addEventListener('submit', (event) => {
+   event.preventDefault()
+   const username = Domelelement.usernameLoginInput.value
+   Domelelement.userNameInput.value = username
+   Domelelement.currentUser.textContent = username
+   getNote(username)
+   Domelelement.modal.close()
+})
+
+Domelelement.logoutBtn.addEventListener('click', (event) => {
+   event.preventDefault()
+   Domelelement.modal.showModal()
+   deleteLi()
+   Domelelement.createForm.reset()
+   Domelelement.modalLogin.reset()
 })

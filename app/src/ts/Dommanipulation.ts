@@ -28,7 +28,6 @@ const goToView = (displaySection: HTMLElement) => {
    const allSections = document.querySelectorAll('section:not(.tabs)') as NodeListOf<HTMLElement>
 
    allSections.forEach((section) => {
-      console.log(section)
       if (section !== displaySection) {
          section.classList.add('hidden')
       }
@@ -124,9 +123,11 @@ const changeTextareaAttr = (textarea: HTMLTextAreaElement | null) => {
       if (isReadonly) {
          textarea.removeAttribute('readonly')
          textarea.setAttribute('placeholder', 'Edit your note here...')
+         textarea.style.cursor = 'auto'
       } else {
          textarea.setAttribute('readonly', '')
          textarea.setAttribute('placeholder', 'Enter your note here...')
+         textarea.style.cursor = 'default'
       }
    }
 }

@@ -1,0 +1,39 @@
+.modal[open] {
+   top: 50%;
+   left: 50%;
+   width: 35rem;
+   height: 35rem;
+   transform: translate(-50%, -50%);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   h2 {
+      margin-bottom: 4rem;
+   }
+}
+
+.modal-form-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+   label {
+      font-size: 2rem;
+   }
+   input {
+      padding: 1rem;
+   }
+}
+
+.input-login {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.modal::backdrop {
+   background: black;
+   opacity: 0.3;
+}

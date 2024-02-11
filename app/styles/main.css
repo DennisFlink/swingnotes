@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* TAB COLOR */
+/* SCROLLBAR COLORS */
+/* NOTE LIST COLOR */
+h2 {
+  font-size: 3rem;
+}
+
 h3 {
   font-size: 5em;
 }
@@ -78,7 +85,66 @@ body {
 
 .button {
   padding: 0.5rem 1rem;
+  min-width: 30%;
   cursor: pointer;
+  border: none;
+}
+
+.update-button {
+  border: none;
+  background-color: #c0eb75;
+}
+
+.publish-button {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+}
+
+.modal[open] {
+  top: 50%;
+  left: 50%;
+  width: 35rem;
+  height: 35rem;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal[open] h2 {
+  margin-bottom: 4rem;
+}
+
+.modal-form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.modal-form-content label {
+  font-size: 2rem;
+}
+.modal-form-content input {
+  padding: 1rem;
+}
+
+.input-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal::backdrop {
+  background: black;
+  opacity: 0.3;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  background-color: aqua;
 }
 
 .all-notes-container {
@@ -90,10 +156,11 @@ body {
 }
 
 .list-container {
-  min-width: 50rem;
+  min-width: 35rem;
   outline: 1rem solid #ced4da;
   border-radius: 1rem;
-  height: 60rem;
+  min-height: 60rem;
+  max-height: 60rem;
   overflow-y: auto;
 }
 
@@ -121,7 +188,7 @@ body {
   gap: 2rem;
   background: #f1f3f5;
   padding: 1rem;
-  height: 100%;
+  min-height: 100%;
 }
 
 .note-item {
@@ -157,45 +224,38 @@ body {
   justify-content: center;
   gap: 2rem;
 }
-.button-container .edit-button {
-  border: none;
-}
-.button-container .delete-button {
-  border: none;
-}
-
-.update-button {
-  background-color: red;
-}
 
 .create-note-container {
   max-width: 140rem;
   padding: 0 1rem;
   margin: 0 auto;
-  background-color: aqua;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10rem;
 }
-.create-note-container .create-note-container {
-  margin-top: 5rem;
+.create-note-container .create-note-form {
+  background-color: #f1f3f5;
+  outline: 1rem solid #ced4da;
+  border-radius: 1rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 50rem;
+  min-width: 35rem;
+  min-height: 60rem;
+  max-height: 60rem;
 }
-.create-note-container .create-note-container .note-field {
+.create-note-container .create-note-form .note-field {
+  width: 100%;
   display: inline-block;
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid black;
   outline: none;
   height: 30rem;
   resize: none;
 }
-.create-note-container .create-note-container .title-input {
+.create-note-container .create-note-form .title-input {
   width: 100%;
 }
 .create-note-container .input-container {
@@ -208,11 +268,10 @@ body {
 }
 .create-note-container .input-container input {
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   border: none;
 }
-.create-note-container .publish-button {
-  display: block;
-  padding: 1rem;
-  width: 100%;
+.create-note-container .input-container #username {
+  pointer-events: none;
+  background-color: #999;
 }/*# sourceMappingURL=main.css.map */

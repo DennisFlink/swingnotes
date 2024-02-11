@@ -1,4 +1,18 @@
+@use '../abstracts/colors' as c;
+
 .button {
    padding: 0.5rem 1rem;
+   min-width: 30%;
    cursor: pointer;
+   border: none;
+}
+.update-button {
+   border: none;
+   background-color: #c0eb75;
+}
+
+.publish-button {
+   display: block;
+   padding: 1rem;
+   width: 100%;
 }
