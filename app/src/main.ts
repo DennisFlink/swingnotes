@@ -1,5 +1,5 @@
 import * as Domelelement from './ts/Domelement'
-import { changeActiveTab, changeViews, deleteNotes, editTextarea, updateNote, deleteLi } from './ts/Dommanipulation'
+import { changeActiveTab, changeViews, deleteNotes, editTextarea, updateNote, deleteLi, goToView } from './ts/Dommanipulation'
 import { NoteData } from './ts/Noteinterface'
 import { postNote, deleteNote, updateNoteApi, getNote } from './ts/Apiservice'
 
@@ -60,6 +60,8 @@ Domelelement.noteList.addEventListener('click', (event) => {
 })
 
 window.addEventListener('load', () => {
+   const allNotes = Domelelement.allNotesSection
+   goToView(allNotes)
    Domelelement.modal.showModal()
 })
 
